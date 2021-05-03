@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="2" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0px;
+            margin:0px;
+        }
+        .header-content{
+            min-height: 150px;
+            padding: 40px 0px 10px 40px;
+            background-color: #DCDCDC;
+           
+        }
+        h1{
+        
+            font-size: 50px;
+            color: black;
+        }
+    </style>
+</head>
+<body class="header">
+    <div class="header-content">
+        <h1 th:text="${content}">Mobile Store</h1>
+    </div>
+</body>
+</html>
