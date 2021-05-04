@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta charset="ISO-8859-1">
+<title>add product</title>
+<style>
+	table{
+		line-height:30px;
+	}
+	table input{
+		height:30px;
+		width:400px;
+	}
+	.content{
+		margin:400px;
+	}
+</style>
+</head>
+<body>
+	<header th:insert="header.html"></header>
+	<div class="content">
+		<form th:object="${product}" th:action="@{add-process}" action="#" method="post">
+			<table>
+				<tr>
+					<td>Product name</td>
+					<td><input type="text" th:field="*{name}"></td>
+				</tr>
+				<tr>
+					<td>Unit Price</td>
+					<td><input type="text" th:field="*{unitPrice}"></td>
+				</tr>
+				<tr>
+					<td>Units in stock</td>
+					<td><input type="text" th:field="*{unitInStock}"></td>
+				</tr>
+				<tr>
+					<td>Description</td>
+					<td><input type="text" th:field="*{description}"></td>
+				</tr>
+				<tr>
+					<td>Manufacturer</td>
+					<td><input type="text" th:field="*{manufgacturer}"></td>
+				</tr>
+				<tr>
+					<td>Category</td>
+					<td><input type="text" th:field="*{category}"></td>
+				</tr>
+				<tr>
+					<td>Condition</td>
+					<td>
+						  <input checked type="radio" id="male" name="gender" value="1" th:field="*{conditionProduct}">
+						  <label for="male">Male</label><br>
+						  <input type="radio" id="female" name="gender" value="2"  th:field="*{conditionProduct}">
+						  <label for="female">Female</label><br>
+						  <input type="radio" id="other" name="gender" value="3"  th:field="*{conditionProduct}">
+						  <label for="other">Other</label>
+					</td>
+				</tr>
+				<tr>
+					<td>Product image file</td>
+					<td><input type="file" th:field="*{image}"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Add Product"></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>
